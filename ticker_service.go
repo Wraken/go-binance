@@ -68,6 +68,37 @@ type BookTicker struct {
 	AskQuantity string `json:"askQty"`
 }
 
+// ListSinglePriceService list one prices 
+type ListSinglePriceService struct {
+	c *Client
+	symbol string
+}
+
+// Symbol set symbol
+func (s *ListSinglePriceService) Symbol(symbol string) *ListSinglePriceService {
+	s.symbol = symbol
+	return s
+}
+
+// Do send request
+func (s *ListSinglePriceService) Do(ctx context.Context, opts ...RequestOption) (res *SymbolPrice, err error) {
+	r := &request{
+		method:   "GET",
+		endpoint: "/api/v3/ticker/price",
+	}
+	r.setParam("symbol", s.symbol)
+	data, err := s.c.callAPI(ctx, r, opts...)
+	if err != nil {
+		return nil, err
+	}
+	res = new(SymbolPrice)
+	err = json.Unmarshal(data, &res)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
 // ListPricesService list all ticker prices
 type ListPricesService struct {
 	c *Client

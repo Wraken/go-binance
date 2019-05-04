@@ -249,6 +249,11 @@ func (c *Client) NewListPricesService() *ListPricesService {
 	return &ListPricesService{c: c}
 }
 
+// NewListSinglePriceService init listing of a single price service
+func (c *Client) NewListSinglePriceService() *ListSinglePriceService {
+	return &ListSinglePriceService{c: c}
+}
+
 // NewBookTickerService init booking ticker service
 func (c *Client) NewBookTickerService() *BookTickerService {
 	return &BookTickerService{c: c}
