@@ -7,7 +7,7 @@ A Golang SDK for [binance jersey](https://www.binance.je) API.
 [![Go Report Card](https://goreportcard.com/badge/github.com/adshao/go-binance)](https://goreportcard.com/report/github.com/adshao/go-binance)
 [![codecov](https://codecov.io/gh/adshao/go-binance/branch/master/graph/badge.svg)](https://codecov.io/gh/adshao/go-binance)
 
-All the REST APIs listed in [binance API document](https://github.com/binance-jersey/binance-official-api-docs) are implemented, as well as the websocket APIs.
+All the REST APIs listed in [binance jersey API document](https://github.com/binance-jersey/binance-official-api-docs) are implemented, as well as the websocket APIs.
 
 For best compatibility, please use Go >= 1.8.
 
